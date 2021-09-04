@@ -1,0 +1,38 @@
+{
+    "name": "codebuglab/laravel-tmdb",
+    "description": "Simple integration with TMDB ( The Movie Database ) API to retrieve their data.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mohamed Elkomy",
+            "email": "mo.ah.elkomy@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "CodeBugLab\\Tmdb\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "CodeBugLab\\Tmdb\\TmdbServiceProvider"
+            ]
+        }
+    },
+    "keywords": [
+        "tmdb",
+        "tmdb-api",
+        "themoviedb",
+        "themoviedb-api",
+        "themoviedatabase",
+        "api",
+        "php",
+        "laravel"
+    ]
+}
