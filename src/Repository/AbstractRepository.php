@@ -2,6 +2,8 @@
 
 namespace CodeBugLab\Tmdb\Repository;
 
+use CodeBugLab\Tmdb\Helper\CurlHelper;
+
 abstract class AbstractRepository
 {
 
@@ -29,6 +31,12 @@ abstract class AbstractRepository
     {
         $this->appendToResponse = "&append_to_response=" . implode(",", $array);
         return $this;
+    }
+
+
+    protected function response($url)
+    {
+        return json_decode(CurlHelper::get($url, $this->getHeaders()));
     }
 
     protected function getHeaders()
