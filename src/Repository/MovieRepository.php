@@ -13,15 +13,8 @@ class MovieRepository extends AbstractRepository
      */
     public function details($movieId)
     {
-        return $this->response(
-            sprintf(
-                "%smovie/%s?api_key=%s%s",
-                $this->url,
-                $movieId,
-                $this->apiKey,
-                $this->appendToResponse
-            )
-        );
+        $this->url = $this->url . "movie/" . $movieId . "?api_key=" . $this->apiKey;
+        return $this;
     }
 
     /**
@@ -29,15 +22,8 @@ class MovieRepository extends AbstractRepository
      */
     public function alternativeTitles($movieId)
     {
-        return $this->response(
-            sprintf(
-                "%smovie/%s/alternative_titles?api_key=%s%s",
-                $this->url,
-                $movieId,
-                $this->apiKey,
-                $this->appendToResponse
-            )
-        );
+        $this->url = $this->url . "movie/" . $movieId . "/alternative_titles?api_key=" . $this->apiKey;
+        return $this;
     }
 
     /**
@@ -45,15 +31,8 @@ class MovieRepository extends AbstractRepository
      */
     public function changes($movieId)
     {
-        return $this->response(
-            sprintf(
-                "%smovie/%s/changes?api_key=%s%s",
-                $this->url,
-                $movieId,
-                $this->apiKey,
-                $this->appendToResponse
-            )
-        );
+        $this->url = $this->url . "movie/" . $movieId . "/changes?api_key=" . $this->apiKey;
+        return $this;
     }
 
     /**
@@ -61,15 +40,8 @@ class MovieRepository extends AbstractRepository
      */
     public function credits($movieId)
     {
-        return $this->response(
-            sprintf(
-                "%smovie/%s/credits?api_key=%s%s",
-                $this->url,
-                $movieId,
-                $this->apiKey,
-                $this->appendToResponse
-            )
-        );
+        $this->url = $this->url . "movie/" . $movieId . "/credits?api_key=" . $this->apiKey;
+        return $this;
     }
 
     /**
@@ -77,15 +49,8 @@ class MovieRepository extends AbstractRepository
      */
     public function externalIds($movieId)
     {
-        return $this->response(
-            sprintf(
-                "%smovie/%s/external_ids?api_key=%s%s",
-                $this->url,
-                $movieId,
-                $this->apiKey,
-                $this->appendToResponse
-            )
-        );
+        $this->url = $this->url . "movie/" . $movieId . "/external_ids?api_key=" . $this->apiKey;
+        return $this;
     }
 
     /**
@@ -93,15 +58,8 @@ class MovieRepository extends AbstractRepository
      */
     public function images($movieId)
     {
-        return $this->response(
-            sprintf(
-                "%smovie/%s/images?api_key=%s%s",
-                $this->url,
-                $movieId,
-                $this->apiKey,
-                $this->appendToResponse
-            )
-        );
+        $this->url = $this->url . "movie/" . $movieId . "/images?api_key=" . $this->apiKey;
+        return $this;
     }
 
     /**
@@ -109,15 +67,8 @@ class MovieRepository extends AbstractRepository
      */
     public function keywords($movieId)
     {
-        return $this->response(
-            sprintf(
-                "%smovie/%s/keywords?api_key=%s%s",
-                $this->url,
-                $movieId,
-                $this->apiKey,
-                $this->appendToResponse
-            )
-        );
+        $this->url = $this->url . "movie/" . $movieId . "/keywords?api_key=" . $this->apiKey;
+        return $this;
     }
 
     /**
@@ -125,15 +76,8 @@ class MovieRepository extends AbstractRepository
      */
     public function lists($movieId)
     {
-        return $this->response(
-            sprintf(
-                "%smovie/%s/lists?api_key=%s%s",
-                $this->url,
-                $movieId,
-                $this->apiKey,
-                $this->appendToResponse
-            )
-        );
+        $this->url = $this->url . "movie/" . $movieId . "/lists?api_key=" . $this->apiKey;
+        return $this;
     }
 
     /**
@@ -141,15 +85,8 @@ class MovieRepository extends AbstractRepository
      */
     public function recommendations($movieId)
     {
-        return $this->response(
-            sprintf(
-                "%smovie/%s/recommendations?api_key=%s%s",
-                $this->url,
-                $movieId,
-                $this->apiKey,
-                $this->appendToResponse
-            )
-        );
+        $this->url = $this->url . "movie/" . $movieId . "/recommendations?api_key=" . $this->apiKey;
+        return $this;
     }
 
     /**
@@ -157,15 +94,8 @@ class MovieRepository extends AbstractRepository
      */
     public function ReleaseDates($movieId)
     {
-        return $this->response(
-            sprintf(
-                "%smovie/%s/release_dates?api_key=%s%s",
-                $this->url,
-                $movieId,
-                $this->apiKey,
-                $this->appendToResponse
-            )
-        );
+        $this->url = $this->url . "movie/" . $movieId . "/release_dates?api_key=" . $this->apiKey;
+        return $this;
     }
 
     /**
@@ -173,15 +103,8 @@ class MovieRepository extends AbstractRepository
      */
     public function reviews($movieId)
     {
-        return $this->response(
-            sprintf(
-                "%smovie/%s/reviews?api_key=%s%s",
-                $this->url,
-                $movieId,
-                $this->apiKey,
-                $this->appendToResponse
-            )
-        );
+        $this->url = $this->url . "movie/" . $movieId . "/reviews?api_key=" . $this->apiKey;
+        return $this;
     }
 
     /**
@@ -189,15 +112,8 @@ class MovieRepository extends AbstractRepository
      */
     public function similar($movieId)
     {
-        return $this->response(
-            sprintf(
-                "%smovie/%s/similar?api_key=%s%s",
-                $this->url,
-                $movieId,
-                $this->apiKey,
-                $this->appendToResponse
-            )
-        );
+        $this->url = $this->url . "movie/" . $movieId . "/similar?api_key=" . $this->apiKey;
+        return $this;
     }
 
     /**
@@ -205,15 +121,8 @@ class MovieRepository extends AbstractRepository
      */
     public function translations($movieId)
     {
-        return $this->response(
-            sprintf(
-                "%smovie/%s/translations?api_key=%s%s",
-                $this->url,
-                $movieId,
-                $this->apiKey,
-                $this->appendToResponse
-            )
-        );
+        $this->url = $this->url . "movie/" . $movieId . "/translations?api_key=" . $this->apiKey;
+        return $this;
     }
 
     /**
@@ -221,15 +130,8 @@ class MovieRepository extends AbstractRepository
      */
     public function videos($movieId)
     {
-        return $this->response(
-            sprintf(
-                "%smovie/%s/videos?api_key=%s%s",
-                $this->url,
-                $movieId,
-                $this->apiKey,
-                $this->appendToResponse
-            )
-        );
+        $this->url = $this->url . "movie/" . $movieId . "/videos?api_key=" . $this->apiKey;
+        return $this;
     }
 
     /**
@@ -237,15 +139,8 @@ class MovieRepository extends AbstractRepository
      */
     public function watchProviders($movieId)
     {
-        return $this->response(
-            sprintf(
-                "%smovie/%s/watch/providers?api_key=%s%s",
-                $this->url,
-                $movieId,
-                $this->apiKey,
-                $this->appendToResponse
-            )
-        );
+        $this->url = $this->url . "movie/" . $movieId . "/watch/providers?api_key=" . $this->apiKey;
+        return $this;
     }
 
     /**
@@ -253,14 +148,8 @@ class MovieRepository extends AbstractRepository
      */
     public function latest()
     {
-        return $this->response(
-            sprintf(
-                "%smovie/latest?api_key=%s%s",
-                $this->url,
-                $this->apiKey,
-                $this->appendToResponse
-            )
-        );
+        $this->url = $this->url . "movie/latest?api_key=" . $this->apiKey;
+        return $this;
     }
 
     /**
@@ -268,14 +157,8 @@ class MovieRepository extends AbstractRepository
      */
     public function nowPlaying()
     {
-        return $this->response(
-            sprintf(
-                "%smovie/now_playing?api_key=%s%s",
-                $this->url,
-                $this->apiKey,
-                $this->appendToResponse
-            )
-        );
+        $this->url = $this->url . "movie/now_playing?api_key=" . $this->apiKey;
+        return $this;
     }
 
     /**
@@ -283,14 +166,8 @@ class MovieRepository extends AbstractRepository
      */
     public function popular()
     {
-        return $this->response(
-            sprintf(
-                "%smovie/popular?api_key=%s%s",
-                $this->url,
-                $this->apiKey,
-                $this->appendToResponse
-            )
-        );
+        $this->url = $this->url . "movie/popular?api_key=" . $this->apiKey;
+        return $this;
     }
 
     /**
@@ -298,14 +175,8 @@ class MovieRepository extends AbstractRepository
      */
     public function topRated()
     {
-        return $this->response(
-            sprintf(
-                "%smovie/top_rated?api_key=%s%s",
-                $this->url,
-                $this->apiKey,
-                $this->appendToResponse
-            )
-        );
+        $this->url = $this->url . "movie/top_rated?api_key=" . $this->apiKey;
+        return $this;
     }
 
     /**
@@ -313,13 +184,7 @@ class MovieRepository extends AbstractRepository
      */
     public function upcoming()
     {
-        return $this->response(
-            sprintf(
-                "%smovie/upcoming?api_key=%s%s",
-                $this->url,
-                $this->apiKey,
-                $this->appendToResponse
-            )
-        );
+        $this->url = $this->url . "movie/upcoming?api_key=" . $this->apiKey;
+        return $this;
     }
 }
