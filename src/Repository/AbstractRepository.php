@@ -2,54 +2,38 @@
 
 namespace CodeBugLab\Tmdb\Repository;
 
+use CodeBugLab\Tmdb\Factory\ApiFactory;
 use CodeBugLab\Tmdb\Helper\CurlHelper;
+use CodeBugLab\Tmdb\Url\ApiGenerator;
 
 abstract class AbstractRepository
 {
 
-    protected $url;
-
-    protected $apiKey;
+    protected $apiGenerator;
 
     protected $appendToResponse;
 
-    public function __construct(string $url, string $apiKey)
+    public function __construct(ApiGenerator $apiGenerator)
     {
-        $this->url = $url;
-
-        $this->apiKey = $apiKey;
+        $this->apiGenerator = $apiGenerator;
     }
 
     /**
-     * The function equivalent of query parameter append_to_response
+     * This magic method responsible for applying all tmdb query parameters
+     * From the factory instead of making separated methods for every one
+     * Like appendToResponse()
+     * Read more about appendToResponse
      * @link https://developers.themoviedb.org/3/getting-started/append-to-response
-     *
-     * @var array  $appendToResponse
-     * ex: ['videos','posters','casts']
      */
-    public function appendToResponse(array $array)
+    public function __call($method, $args)
     {
-        $this->url = $this->url . "&append_to_response=" . implode(",", $array);
-        return $this;
-    }
-
-    /**
-     * The function return other pages from the response if exist
-     * For example most popular movies have over than 400 pages
-     * And every one have 20 records only
-     *
-     * @var array  $pageNumber
-     * ex: 1 - 10 - 20
-     */
-    public function page(int $pageNumber)
-    {
-        $this->url = $this->url . "&page=" . $pageNumber;
+        $this->apiGenerator = (new ApiFactory())->getDecorator($method, $args, $this->apiGenerator);
         return $this;
     }
 
     public function get()
     {
-        return $this->response($this->url);
+        return $this->response($this->apiGenerator->getUrl());
     }
 
 

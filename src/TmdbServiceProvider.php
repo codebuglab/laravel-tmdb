@@ -2,10 +2,8 @@
 
 namespace CodeBugLab\Tmdb;
 
-use CodeBugLab\Tmdb\Repository\MovieRepository;
-use CodeBugLab\Tmdb\Repository\PeopleRepository;
+use CodeBugLab\Tmdb\Url\ApiGenerator;
 use Illuminate\Support\ServiceProvider;
-
 
 class TmdbServiceProvider extends ServiceProvider
 {
@@ -27,12 +25,8 @@ class TmdbServiceProvider extends ServiceProvider
 
         $apiKey = config('tmdb.api_key');
 
-        $this->app->bind(MovieRepository::class, function () use ($url, $apiKey) {
-            return new MovieRepository($url, $apiKey);
-        });
-
-        $this->app->bind(PeopleRepository::class, function () use ($url, $apiKey) {
-            return new PeopleRepository($url, $apiKey);
+        $this->app->bind(ApiGenerator::class, function () use ($url, $apiKey) {
+            return new ApiGenerator($url, $apiKey);
         });
 
         $this->app->bind('Tmdb', Tmdb::class);

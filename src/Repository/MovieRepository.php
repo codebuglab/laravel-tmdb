@@ -13,7 +13,7 @@ class MovieRepository extends AbstractRepository
      */
     public function details($movieId)
     {
-        $this->url = $this->url . "movie/" . $movieId . "?api_key=" . $this->apiKey;
+        $this->apiGenerator->api("movie/" . $movieId);
         return $this;
     }
 
@@ -22,7 +22,7 @@ class MovieRepository extends AbstractRepository
      */
     public function alternativeTitles($movieId)
     {
-        $this->url = $this->url . "movie/" . $movieId . "/alternative_titles?api_key=" . $this->apiKey;
+        $this->apiGenerator->api("movie/" . $movieId . "/alternative_titles");
         return $this;
     }
 
@@ -31,7 +31,7 @@ class MovieRepository extends AbstractRepository
      */
     public function changes($movieId)
     {
-        $this->url = $this->url . "movie/" . $movieId . "/changes?api_key=" . $this->apiKey;
+        $this->apiGenerator->api("movie/" . $movieId . "/changes");
         return $this;
     }
 
@@ -40,7 +40,7 @@ class MovieRepository extends AbstractRepository
      */
     public function credits($movieId)
     {
-        $this->url = $this->url . "movie/" . $movieId . "/credits?api_key=" . $this->apiKey;
+        $this->apiGenerator->api("movie/" . $movieId . "/credits");
         return $this;
     }
 
@@ -49,7 +49,7 @@ class MovieRepository extends AbstractRepository
      */
     public function externalIds($movieId)
     {
-        $this->url = $this->url . "movie/" . $movieId . "/external_ids?api_key=" . $this->apiKey;
+        $this->apiGenerator->api("movie/" . $movieId . "/external_ids");
         return $this;
     }
 
@@ -58,7 +58,7 @@ class MovieRepository extends AbstractRepository
      */
     public function images($movieId)
     {
-        $this->url = $this->url . "movie/" . $movieId . "/images?api_key=" . $this->apiKey;
+        $this->apiGenerator->api("movie/" . $movieId . "/images");
         return $this;
     }
 
@@ -67,7 +67,7 @@ class MovieRepository extends AbstractRepository
      */
     public function keywords($movieId)
     {
-        $this->url = $this->url . "movie/" . $movieId . "/keywords?api_key=" . $this->apiKey;
+        $this->apiGenerator->api("movie/" . $movieId . "/keywords");
         return $this;
     }
 
@@ -76,7 +76,7 @@ class MovieRepository extends AbstractRepository
      */
     public function lists($movieId)
     {
-        $this->url = $this->url . "movie/" . $movieId . "/lists?api_key=" . $this->apiKey;
+        $this->apiGenerator->api("movie/" . $movieId . "/lists");
         return $this;
     }
 
@@ -85,7 +85,7 @@ class MovieRepository extends AbstractRepository
      */
     public function recommendations($movieId)
     {
-        $this->url = $this->url . "movie/" . $movieId . "/recommendations?api_key=" . $this->apiKey;
+        $this->apiGenerator->api("movie/" . $movieId . "/recommendations");
         return $this;
     }
 
@@ -94,7 +94,7 @@ class MovieRepository extends AbstractRepository
      */
     public function ReleaseDates($movieId)
     {
-        $this->url = $this->url . "movie/" . $movieId . "/release_dates?api_key=" . $this->apiKey;
+        $this->apiGenerator->api("movie/" . $movieId . "/release_dates");
         return $this;
     }
 
@@ -103,7 +103,7 @@ class MovieRepository extends AbstractRepository
      */
     public function reviews($movieId)
     {
-        $this->url = $this->url . "movie/" . $movieId . "/reviews?api_key=" . $this->apiKey;
+        $this->apiGenerator->api("movie/" . $movieId . "/reviews");
         return $this;
     }
 
@@ -112,7 +112,7 @@ class MovieRepository extends AbstractRepository
      */
     public function similar($movieId)
     {
-        $this->url = $this->url . "movie/" . $movieId . "/similar?api_key=" . $this->apiKey;
+        $this->apiGenerator->api("movie/" . $movieId . "/similar");
         return $this;
     }
 
@@ -121,7 +121,7 @@ class MovieRepository extends AbstractRepository
      */
     public function translations($movieId)
     {
-        $this->url = $this->url . "movie/" . $movieId . "/translations?api_key=" . $this->apiKey;
+        $this->apiGenerator->api("movie/" . $movieId . "/translations");
         return $this;
     }
 
@@ -130,7 +130,7 @@ class MovieRepository extends AbstractRepository
      */
     public function videos($movieId)
     {
-        $this->url = $this->url . "movie/" . $movieId . "/videos?api_key=" . $this->apiKey;
+        $this->apiGenerator->api("movie/" . $movieId . "/videos");
         return $this;
     }
 
@@ -139,7 +139,7 @@ class MovieRepository extends AbstractRepository
      */
     public function watchProviders($movieId)
     {
-        $this->url = $this->url . "movie/" . $movieId . "/watch/providers?api_key=" . $this->apiKey;
+        $this->apiGenerator->api("movie/" . $movieId . "/watch/providers");
         return $this;
     }
 
@@ -148,7 +148,7 @@ class MovieRepository extends AbstractRepository
      */
     public function latest()
     {
-        $this->url = $this->url . "movie/latest?api_key=" . $this->apiKey;
+        $this->apiGenerator->api("movie/latest");
         return $this;
     }
 
@@ -157,7 +157,7 @@ class MovieRepository extends AbstractRepository
      */
     public function nowPlaying()
     {
-        $this->url = $this->url . "movie/now_playing?api_key=" . $this->apiKey;
+        $this->apiGenerator->api("movie/now_playing");
         return $this;
     }
 
@@ -166,7 +166,7 @@ class MovieRepository extends AbstractRepository
      */
     public function popular()
     {
-        $this->url = $this->url . "movie/popular?api_key=" . $this->apiKey;
+        $this->apiGenerator->api("movie/popular");
         return $this;
     }
 
@@ -175,7 +175,7 @@ class MovieRepository extends AbstractRepository
      */
     public function topRated()
     {
-        $this->url = $this->url . "movie/top_rated?api_key=" . $this->apiKey;
+        $this->apiGenerator->api("movie/top_rated");
         return $this;
     }
 
@@ -184,7 +184,7 @@ class MovieRepository extends AbstractRepository
      */
     public function upcoming()
     {
-        $this->url = $this->url . "movie/upcoming?api_key=" . $this->apiKey;
+        $this->apiGenerator->api("movie/upcoming");
         return $this;
     }
 }
