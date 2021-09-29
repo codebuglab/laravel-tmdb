@@ -92,7 +92,7 @@ class MovieRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/movies/get-movie-release-dates
      */
-    public function ReleaseDates($movieId)
+    public function releaseDates($movieId)
     {
         $this->apiGenerator->api("movie/" . $movieId . "/release_dates");
         return $this;
