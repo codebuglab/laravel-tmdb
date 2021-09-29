@@ -835,7 +835,7 @@ $tmdb = Tmdb::movies()->details($movieId)->appendToResponse(['casts'])->get(); /
 
 ### Query
 - This option used when you want to use tmdb search.
-- For example if you want to search on tv show you have to get it by this way.
+- For example if you want to search for tv show you have to get it by this way.
 ```php
 $tmdb = Tmdb::search()->tvShows()->query($query)->get();
 ```
