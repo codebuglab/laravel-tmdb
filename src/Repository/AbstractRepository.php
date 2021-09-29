@@ -39,7 +39,7 @@ abstract class AbstractRepository
 
     protected function response($url)
     {
-        return json_decode(CurlHelper::get($url, $this->getHeaders()));
+        return json_decode(CurlHelper::get($url, $this->getHeaders()), true);
     }
 
     protected function getHeaders()
