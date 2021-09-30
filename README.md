@@ -176,7 +176,7 @@ $tmdb = Tmdb::certifications()->movieCertifications()->get(); // return array
 - For more [information](https://developers.themoviedb.org/3/certifications/get-movie-certifications).
 #### Get TV Certifications
 ```php
-$tmdb = Tmdb::certifications()->tvCertification()->get(); // return array
+$tmdb = Tmdb::certifications()->tvCertifications()->get(); // return array
 ```
 - For more [information](https://developers.themoviedb.org/3/certifications/get-tv-certifications).
 

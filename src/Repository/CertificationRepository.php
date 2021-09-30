@@ -19,7 +19,7 @@ class CertificationRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/certifications/get-tv-certifications
      */
-    public function tvCertification()
+    public function tvCertifications()
     {
         $this->apiGenerator->api("certification/tv/list");
         return $this;
