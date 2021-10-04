@@ -8,6 +8,7 @@ use CodeBugLab\Tmdb\Url\ApiGenerator;
 
 abstract class AbstractRepository
 {
+    public static $apiUrl = "https://api.themoviedb.org/3/";
 
     protected $apiGenerator;
 
@@ -25,24 +26,24 @@ abstract class AbstractRepository
      * Read more about appendToResponse
      * @link https://developers.themoviedb.org/3/getting-started/append-to-response
      */
-    public function __call($method, $args)
+    public function __call($method, $args): self
     {
         $this->apiGenerator = (new ApiFactory())->getDecorator($method, $args, $this->apiGenerator);
         return $this;
     }
 
-    public function get()
+    public function get(): array
     {
         return $this->response($this->apiGenerator->getUrl());
     }
 
 
-    protected function response($url)
+    protected function response($url): array
     {
         return json_decode(CurlHelper::get($url, $this->getHeaders()), true);
     }
 
-    protected function getHeaders()
+    protected function getHeaders(): array
     {
         return [
             "Content-type: application/json;charset=utf-8"

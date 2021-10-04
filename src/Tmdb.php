@@ -24,9 +24,6 @@ use CodeBugLab\Tmdb\Repository\WatchProviderRepository;
 
 class Tmdb
 {
-
-    public static $url = "https://api.themoviedb.org/3/";
-
     private $certificationRepository;
 
     private $changeRepository;
@@ -125,97 +122,97 @@ class Tmdb
         $this->watchProviderRepository = $watchProviderRepository;
     }
 
-    public function certifications()
+    public function certifications(): CertificationRepository
     {
         return $this->certificationRepository;
     }
 
-    public function changes()
+    public function changes(): ChangeRepository
     {
         return $this->changeRepository;
     }
 
-    public function collections()
+    public function collections(): CollectionRepository
     {
         return $this->collectionRepository;
     }
 
-    public function companies()
+    public function companies(): CompanyRepository
     {
         return $this->companyRepository;
     }
 
-    public function configuration()
+    public function configuration(): ConfigurationRepository
     {
         return $this->configurationRepository;
     }
 
-    public function credits()
+    public function credits(): CreditRepository
     {
         return $this->creditRepository;
     }
 
-    public function discover()
+    public function discover(): DiscoverRepository
     {
         return $this->discoverRepository;
     }
 
-    public function genres()
+    public function genres(): GenreRepository
     {
         return $this->genreRepository;
     }
 
-    public function lists()
+    public function lists(): ListRepository
     {
         return $this->listRepository;
     }
 
-    public function movies()
+    public function movies(): MovieRepository
     {
         return $this->movieRepository;
     }
 
-    public function networks()
+    public function networks(): NetworkRepository
     {
         return $this->networkRepository;
     }
 
-    public function trending()
+    public function trending(): TrendingRepository
     {
         return $this->trendingRepository;
     }
 
-    public function people()
+    public function people(): PersonRepository
     {
         return $this->personRepository;
     }
 
-    public function reviews()
+    public function reviews(): ReviewRepository
     {
         return $this->reviewRepository;
     }
 
-    public function search()
+    public function search(): SearchRepository
     {
         return $this->searchRepository;
     }
 
-    public function tv()
+    public function tv(): TvRepository
     {
         return $this->tvRepository;
     }
 
-    public function tvSeasons()
+    public function tvSeasons(): TvSeasonRepository
     {
         return $this->tvSeasonRepository;
     }
 
-    public function tvEpisodes()
+    public function tvEpisodes(): TvEpisodeRepository
     {
         return $this->tvEpisodeRepository;
     }
 
-    public function watchProviders()
+    public function watchProviders(): WatchProviderRepository
     {
         return $this->watchProviderRepository;
     }
