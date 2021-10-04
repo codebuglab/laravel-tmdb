@@ -12,7 +12,7 @@ class TrendingRepository extends AbstractRepository
      * $mediaType options: all, movie, tv, person
      * $typeWIndow options: day, week
      */
-    public function trending($mediaType, $typeWindow)
+    public function trending($mediaType, $typeWindow): self
     {
         $this->apiGenerator->api("trending/{$mediaType}/{$typeWindow}");
         return $this;

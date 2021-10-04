@@ -10,7 +10,7 @@ class TvEpisodeRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/tv-episodes/get-tv-episode-details
      */
-    public function details($tvId, $seasonNumber, $episodeNumber)
+    public function details($tvId, $seasonNumber, $episodeNumber): self
     {
         $this->apiGenerator->api("tv/" . $tvId . "/season/" . $seasonNumber . "/episode/" . $episodeNumber);
         return $this;
@@ -28,7 +28,7 @@ class TvEpisodeRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/tv-episodes/get-tv-episode-credits
      */
-    public function credits($tvId, $seasonNumber, $episodeNumber)
+    public function credits($tvId, $seasonNumber, $episodeNumber): self
     {
         $this->apiGenerator->api("tv/" . $tvId . "/season/" . $seasonNumber . "/episode/" . $episodeNumber . "/credits");
         return $this;
@@ -37,7 +37,7 @@ class TvEpisodeRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/tv-episodes/get-tv-episode-external_ids
      */
-    public function externalIds($tvId, $seasonNumber, $episodeNumber)
+    public function externalIds($tvId, $seasonNumber, $episodeNumber): self
     {
         $this->apiGenerator->api("tv/" . $tvId . "/season/" . $seasonNumber . "/episode/" . $episodeNumber . "/external_ids");
         return $this;
@@ -46,7 +46,7 @@ class TvEpisodeRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/tv-episodes/get-tv-episode-images
      */
-    public function images($tvId, $seasonNumber, $episodeNumber)
+    public function images($tvId, $seasonNumber, $episodeNumber): self
     {
         $this->apiGenerator->api("tv/" . $tvId . "/season/" . $seasonNumber . "/episode/" . $episodeNumber . "/images");
         return $this;
@@ -55,7 +55,7 @@ class TvEpisodeRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/tv-episodes/get-tv-episode-translations
      */
-    public function translations($tvId, $seasonNumber, $episodeNumber)
+    public function translations($tvId, $seasonNumber, $episodeNumber): self
     {
         $this->apiGenerator->api("tv/" . $tvId . "/season/" . $seasonNumber . "/episode/" . $episodeNumber . "/translations");
         return $this;
@@ -64,7 +64,7 @@ class TvEpisodeRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/tv-episodes/get-tv-episode-videos
      */
-    public function videos($tvId, $seasonNumber, $episodeNumber)
+    public function videos($tvId, $seasonNumber, $episodeNumber): self
     {
         $this->apiGenerator->api("tv/" . $tvId . "/season/" . $seasonNumber . "/episode/" . $episodeNumber . "/videos");
         return $this;

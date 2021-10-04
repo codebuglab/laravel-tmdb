@@ -10,7 +10,7 @@ class ListRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/lists/get-list-details
      */
-    public function details($listId)
+    public function details($listId): self
     {
         $this->apiGenerator->api("list/" . $listId);
         return $this;
@@ -19,7 +19,7 @@ class ListRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/lists/check-item-status
      */
-    public function itemStatus($listId)
+    public function itemStatus($listId): self
     {
         $this->apiGenerator->api("list/" . $listId . "/item_status");
         return $this;

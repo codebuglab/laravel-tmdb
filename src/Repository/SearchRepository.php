@@ -10,7 +10,7 @@ class SearchRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/search/search-companies
      */
-    public function companies()
+    public function companies(): self
     {
         $this->apiGenerator->api("search/company");
         return $this;
@@ -19,7 +19,7 @@ class SearchRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/search/search-collections
      */
-    public function collections()
+    public function collections(): self
     {
         $this->apiGenerator->api("search/collection");
         return $this;
@@ -28,7 +28,7 @@ class SearchRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/search/search-keywords
      */
-    public function keywords()
+    public function keywords(): self
     {
         $this->apiGenerator->api("search/keyword");
         return $this;
@@ -37,7 +37,7 @@ class SearchRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/search/search-movies
      */
-    public function movies()
+    public function movies(): self
     {
         $this->apiGenerator->api("search/movie");
         return $this;
@@ -46,7 +46,7 @@ class SearchRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/search/multi-search
      */
-    public function multi()
+    public function multi(): self
     {
         $this->apiGenerator->api("search/multi");
         return $this;
@@ -55,7 +55,7 @@ class SearchRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/search/search-people
      */
-    public function people()
+    public function people(): self
     {
         $this->apiGenerator->api("search/person");
         return $this;
@@ -64,7 +64,7 @@ class SearchRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/search/search-tv-shows
      */
-    public function tvShows()
+    public function tvShows(): self
     {
         $this->apiGenerator->api("search/tv");
         return $this;

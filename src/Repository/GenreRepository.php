@@ -10,7 +10,7 @@ class GenreRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/genres/get-movie-list
      */
-    public function movieList()
+    public function movieList(): self
     {
         $this->apiGenerator->api("genre/movie/list");
         return $this;
@@ -19,7 +19,7 @@ class GenreRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/genres/get-tv-list
      */
-    public function tvList()
+    public function tvList(): self
     {
         $this->apiGenerator->api("genre/tv/list");
         return $this;

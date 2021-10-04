@@ -11,7 +11,7 @@ class MovieRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/movies/get-movie-details
      */
-    public function details($movieId)
+    public function details($movieId): self
     {
         $this->apiGenerator->api("movie/" . $movieId);
         return $this;
@@ -20,7 +20,7 @@ class MovieRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/movies/get-movie-alternative-titles
      */
-    public function alternativeTitles($movieId)
+    public function alternativeTitles($movieId): self
     {
         $this->apiGenerator->api("movie/" . $movieId . "/alternative_titles");
         return $this;
@@ -29,7 +29,7 @@ class MovieRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/movies/get-movie-changes
      */
-    public function changes($movieId)
+    public function changes($movieId): self
     {
         $this->apiGenerator->api("movie/" . $movieId . "/changes");
         return $this;
@@ -38,7 +38,7 @@ class MovieRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/movies/get-movie-credits
      */
-    public function credits($movieId)
+    public function credits($movieId): self
     {
         $this->apiGenerator->api("movie/" . $movieId . "/credits");
         return $this;
@@ -47,7 +47,7 @@ class MovieRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/movies/get-movie-external-ids
      */
-    public function externalIds($movieId)
+    public function externalIds($movieId): self
     {
         $this->apiGenerator->api("movie/" . $movieId . "/external_ids");
         return $this;
@@ -56,7 +56,7 @@ class MovieRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/movies/get-movie-images
      */
-    public function images($movieId)
+    public function images($movieId): self
     {
         $this->apiGenerator->api("movie/" . $movieId . "/images");
         return $this;
@@ -65,7 +65,7 @@ class MovieRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/movies/get-movie-keywords
      */
-    public function keywords($movieId)
+    public function keywords($movieId): self
     {
         $this->apiGenerator->api("movie/" . $movieId . "/keywords");
         return $this;
@@ -74,7 +74,7 @@ class MovieRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/movies/get-movie-lists
      */
-    public function lists($movieId)
+    public function lists($movieId): self
     {
         $this->apiGenerator->api("movie/" . $movieId . "/lists");
         return $this;
@@ -83,7 +83,7 @@ class MovieRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/movies/get-movie-recommendations
      */
-    public function recommendations($movieId)
+    public function recommendations($movieId): self
     {
         $this->apiGenerator->api("movie/" . $movieId . "/recommendations");
         return $this;
@@ -92,7 +92,7 @@ class MovieRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/movies/get-movie-release-dates
      */
-    public function releaseDates($movieId)
+    public function releaseDates($movieId): self
     {
         $this->apiGenerator->api("movie/" . $movieId . "/release_dates");
         return $this;
@@ -101,7 +101,7 @@ class MovieRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/movies/get-movie-reviews
      */
-    public function reviews($movieId)
+    public function reviews($movieId): self
     {
         $this->apiGenerator->api("movie/" . $movieId . "/reviews");
         return $this;
@@ -110,7 +110,7 @@ class MovieRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/movies/get-similar-movies
      */
-    public function similar($movieId)
+    public function similar($movieId): self
     {
         $this->apiGenerator->api("movie/" . $movieId . "/similar");
         return $this;
@@ -119,7 +119,7 @@ class MovieRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/movies/get-movie-translations
      */
-    public function translations($movieId)
+    public function translations($movieId): self
     {
         $this->apiGenerator->api("movie/" . $movieId . "/translations");
         return $this;
@@ -128,7 +128,7 @@ class MovieRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/movies/get-movie-videos
      */
-    public function videos($movieId)
+    public function videos($movieId): self
     {
         $this->apiGenerator->api("movie/" . $movieId . "/videos");
         return $this;
@@ -137,7 +137,7 @@ class MovieRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/movies/get-movie-watch-providers
      */
-    public function watchProviders($movieId)
+    public function watchProviders($movieId): self
     {
         $this->apiGenerator->api("movie/" . $movieId . "/watch/providers");
         return $this;
@@ -146,7 +146,7 @@ class MovieRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/movies/get-latest-movie
      */
-    public function latest()
+    public function latest(): self
     {
         $this->apiGenerator->api("movie/latest");
         return $this;
@@ -155,7 +155,7 @@ class MovieRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/movies/get-now-playing
      */
-    public function nowPlaying()
+    public function nowPlaying(): self
     {
         $this->apiGenerator->api("movie/now_playing");
         return $this;
@@ -164,7 +164,7 @@ class MovieRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/movies/get-popular-movies
      */
-    public function popular()
+    public function popular(): self
     {
         $this->apiGenerator->api("movie/popular");
         return $this;
@@ -173,7 +173,7 @@ class MovieRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/movies/get-top-rated-movies
      */
-    public function topRated()
+    public function topRated(): self
     {
         $this->apiGenerator->api("movie/top_rated");
         return $this;
@@ -182,7 +182,7 @@ class MovieRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/movies/get-upcoming
      */
-    public function upcoming()
+    public function upcoming(): self
     {
         $this->apiGenerator->api("movie/upcoming");
         return $this;

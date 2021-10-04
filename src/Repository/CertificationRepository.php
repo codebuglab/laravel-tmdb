@@ -10,7 +10,7 @@ class CertificationRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/certifications/get-movie-certifications
      */
-    public function movieCertifications()
+    public function movieCertifications(): self
     {
         $this->apiGenerator->api("certification/movie/list");
         return $this;
@@ -19,7 +19,7 @@ class CertificationRepository extends AbstractRepository
     /**
      * @see https://developers.themoviedb.org/3/certifications/get-tv-certifications
      */
-    public function tvCertifications()
+    public function tvCertifications(): self
     {
         $this->apiGenerator->api("certification/tv/list");
         return $this;
