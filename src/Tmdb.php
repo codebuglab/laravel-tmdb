@@ -24,6 +24,9 @@ use CodeBugLab\Tmdb\Repository\WatchProviderRepository;
 
 class Tmdb
 {
+
+    public static $url = "https://api.themoviedb.org/3/";
+
     private $certificationRepository;
 
     private $changeRepository;

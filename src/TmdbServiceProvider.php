@@ -21,12 +21,8 @@ class TmdbServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $url = "https://api.themoviedb.org/3/";
-
-        $apiKey = config('tmdb.api_key');
-
-        $this->app->bind(ApiGenerator::class, function () use ($url, $apiKey) {
-            return new ApiGenerator($url, $apiKey);
+        $this->app->bind(ApiGenerator::class, function () {
+            return new ApiGenerator(Tmdb::$url, config('tmdb.api_key'));
         });
 
         $this->app->bind('Tmdb', Tmdb::class);
