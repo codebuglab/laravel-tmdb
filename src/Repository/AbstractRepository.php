@@ -12,6 +12,8 @@ abstract class AbstractRepository
 
     protected $apiGenerator;
 
+    protected $apiDecorator = false;
+
     protected $appendToResponse;
 
     public function __construct(ApiGenerator $apiGenerator)
@@ -34,6 +36,13 @@ abstract class AbstractRepository
 
     public function get(): array
     {
+        if ($this->apiDecorator) {
+            $url = $this->apiDecorator->getUrl();
+
+            $this->apiDecorator = false;
+
+            return $this->response($url);
+        }
         return $this->response($this->apiGenerator->getUrl());
     }
 
