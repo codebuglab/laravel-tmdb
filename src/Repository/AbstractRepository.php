@@ -30,7 +30,7 @@ abstract class AbstractRepository
      */
     public function __call($method, $args): self
     {
-        $this->apiGenerator = (new ApiFactory())->getDecorator($method, $args, $this->apiGenerator);
+        $this->apiDecorator = (new ApiFactory())->getDecorator($method, $args, $this->apiGenerator);
         return $this;
     }
 
