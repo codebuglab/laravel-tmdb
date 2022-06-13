@@ -23,7 +23,7 @@ class TmdbServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(ApiGenerator::class, function () {
-            return new ApiGenerator(AbstractRepository::$apiUrl, config('tmdb.api_key'));
+            return new ApiGenerator(AbstractRepository::$apiUrl, config('tmdb.api_key'), config('tmdb.api_language'));
         });
 
         $this->app->bind('Tmdb', Tmdb::class);
