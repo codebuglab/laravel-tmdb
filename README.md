@@ -158,7 +158,7 @@ php artisan vendor:publish --provider="CodeBugLab\Tmdb\TmdbServiceProvider"
 ```
 - File `tmdb.php` will be publish in `config` folder after that.
 - Then you have to put your tmdb api key in your `env` file like this `TMDB_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`.
-- If the returned data from the API should be in another language, set the TMDB_LANGUAGE key in your `env`, eg. like this: `TMDB_LANGUAGE=da-DK`.
+- If the returned data from the API should be in another language, set the TMDB_LANGUAGE key in your `env`, eg. like this: `TMDB_LANGUAGE=da`.
 
 ## Instructions
 - You can use tmdb api and get information your want, first take a quick look at [official api page](https://developers.themoviedb.org/3/getting-started).
