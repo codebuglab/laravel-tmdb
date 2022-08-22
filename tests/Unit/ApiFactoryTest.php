@@ -16,10 +16,11 @@ class ApiFactoryTest extends TestCase
     private $pageNumber = '1';
     private $queryString = 'Jack+Reacher';
     private $appendString = ['videos','posters','casts'];
+    private $apiLanguage = 'en-US';
 
     public function test_api_factory_return_page_decorator()
     {
-        $url = new ApiGenerator(AbstractRepository::$apiUrl, $this->apiKey);
+        $url = new ApiGenerator(AbstractRepository::$apiUrl, $this->apiKey, $this->apiLanguage);
 
         $url->api("movie/" . $this->movieId);
 
@@ -27,9 +28,10 @@ class ApiFactoryTest extends TestCase
 
         $this->assertEquals(
             sprintf(
-                "https://api.themoviedb.org/3/movie/%s?api_key=%s&page=%s",
+                "https://api.themoviedb.org/3/movie/%s?api_key=%s&language=%s&page=%s",
                 $this->movieId,
                 $this->apiKey,
+                $this->apiLanguage,
                 $this->pageNumber
             ),
             $apiFactory->getUrl()
@@ -38,7 +40,7 @@ class ApiFactoryTest extends TestCase
 
     public function test_api_factory_return_query_decorator()
     {
-        $url = new ApiGenerator(AbstractRepository::$apiUrl, $this->apiKey);
+        $url = new ApiGenerator(AbstractRepository::$apiUrl, $this->apiKey, $this->apiLanguage);
 
         $url->api("movie/" . $this->movieId);
 
@@ -46,9 +48,10 @@ class ApiFactoryTest extends TestCase
 
         $this->assertEquals(
             sprintf(
-                "https://api.themoviedb.org/3/movie/%s?api_key=%s&query=%s",
+                "https://api.themoviedb.org/3/movie/%s?api_key=%s&language=%s&query=%s",
                 $this->movieId,
                 $this->apiKey,
+                $this->apiLanguage,
                 urlencode($this->queryString)
             ),
             $apiFactory->getUrl()
@@ -58,7 +61,7 @@ class ApiFactoryTest extends TestCase
 
     public function test_api_factory_return_append_to_response_decorator()
     {
-        $url = new ApiGenerator(AbstractRepository::$apiUrl, $this->apiKey);
+        $url = new ApiGenerator(AbstractRepository::$apiUrl, $this->apiKey, $this->apiLanguage);
 
         $url->api("movie/" . $this->movieId);
 
@@ -66,9 +69,10 @@ class ApiFactoryTest extends TestCase
 
         $this->assertEquals(
             sprintf(
-                "https://api.themoviedb.org/3/movie/%s?api_key=%s&append_to_response=%s",
+                "https://api.themoviedb.org/3/movie/%s?api_key=%s&language=%s&append_to_response=%s",
                 $this->movieId,
                 $this->apiKey,
+                $this->apiLanguage,
                 implode(",", $this->appendString)
             ),
             $apiFactory->getUrl()
@@ -79,7 +83,7 @@ class ApiFactoryTest extends TestCase
     {
         $this->expectException(MethodException::class);
 
-        $url = new ApiGenerator(AbstractRepository::$apiUrl, $this->apiKey);
+        $url = new ApiGenerator(AbstractRepository::$apiUrl, $this->apiKey, $this->apiLanguage);
 
         $url->api("movie/" . $this->movieId);
 
