@@ -10,16 +10,20 @@ class ApiGenerator implements ApiGeneratorInterface
 
     protected $apiKey;
 
-    public function __construct(string $apiUrl, string $apiKey)
+    protected $apiLanguage;
+
+    public function __construct(string $apiUrl, string $apiKey, string $apiLanguage)
     {
         $this->apiUrl = $apiUrl;
 
         $this->apiKey = $apiKey;
+
+        $this->apiLanguage = $apiLanguage;
     }
 
     public function api($path)
     {
-        $this->url = $this->apiUrl . $path . "?api_key=" . $this->apiKey;
+        $this->url = $this->apiUrl . $path . "?api_key=" . $this->apiKey . "&language=" . $this->apiLanguage;
     }
 
     public function getUrl()
